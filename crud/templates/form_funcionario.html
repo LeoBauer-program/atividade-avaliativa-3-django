@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionário</title>
+    {% bootstrap_css %}
+</head>
+<body style="margin:2%">
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button type="button" class="btn btn-success" onclick="history.go(-1)">Voltar</button>
+    </form>
+</body>
+</html>

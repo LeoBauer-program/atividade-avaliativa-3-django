@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionário</title>
+    {% bootstrap_css %}
+</head>
+<body style="margin:2%">
+    <h2>{{ fun.nome }}</h2>
+    <p>CPF: {{ fun.cpf }}</p>
+    <p>Email: {{ fun.email }}</p>
+    <p>Remuneração: R$ {{ fun.remuneracao }}</p>
+    <button class="btn btn-success" onclick="history.go(-1)">Voltar</button>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Remover</title>
+    {% bootstrap_css %}
+</head>
+<body style="margin:2%">
+    <h2>Deseja remover {{ object.nome }}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Confirmar</button>
+        <button type="button" class="btn btn-success" onclick="history.go(-1)">Cancelar</button>
+    </form>
+</body>
+</html>

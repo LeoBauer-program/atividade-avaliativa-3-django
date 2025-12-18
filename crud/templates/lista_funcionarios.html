@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionários</title>
+    {% bootstrap_css %}
+</head>
+<body style="margin:2%">
+    <h1>Funcionários</h1>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        {% for funcionario in object_list %}
+        <tr>
+            <td>{{ funcionario.nome }}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'listar_funcionario' funcionario.id %}">Ver</a>
+                <a class="btn btn-success" href="{% url 'editar_funcionario' funcionario.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'remover_funcionario' funcionario.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class="btn btn-primary" href="{% url 'form_funcionario' %}">Novo Funcionário</a>
+</body>
+</html>
